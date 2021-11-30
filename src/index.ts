@@ -1,7 +1,8 @@
 import express from 'express'
 import { engine } from 'express-handlebars'
 import path  from 'path'
-import router from './route'
+import booksRoutes from './route/books'
+import indexRoutes from './route/'
 
 // init
 const app = express()
@@ -22,7 +23,8 @@ app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
 // routes
-app.use('/books', router)
+app.use('/', indexRoutes)
+app.use('/books', booksRoutes)
 
 // static files
 app.use(express.static(path.join(__dirname, 'public')))
