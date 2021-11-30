@@ -6,6 +6,7 @@ import indexRoutes from './route/'
 
 // init
 const app = express()
+import './database'
 
 // setiing
 app.set('port', process.env.PORT || 4000)
